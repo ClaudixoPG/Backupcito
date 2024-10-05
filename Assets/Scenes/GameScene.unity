@@ -1699,6 +1699,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 14670762}
     - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
+      propertyPath: bullets.Array.data[1]
+      value: 
+      objectReference: {fileID: 7108867720034507715, guid: 185c54c0f2cf3b7499890d54f8238192, type: 3}
+    - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
+      propertyPath: bullets.Array.data[2]
+      value: 
+      objectReference: {fileID: 6429980485774044329, guid: 043efadc01712bf44b7070e04b002e13, type: 3}
+    - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
       propertyPath: shipSprites.Array.size
       value: 5
       objectReference: {fileID: 0}

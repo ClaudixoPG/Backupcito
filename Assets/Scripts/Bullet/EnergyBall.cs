@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnergyBall : Bullet
 {
-    public GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
     // Update is called once per frame
     void Update()
     {
         Movement();
     }
 
-    void Movement()
+    //Override the movement method to move the bullet in a wave pattern
+    public override void Movement()
     {
-        transform.Translate(Vector3.up * 5.0f * Time.deltaTime);
+        //use sin to move the bullet in a wave pattern
+        transform.Translate(new Vector3(Mathf.Sin(Time.time * 1.5f), 1, 0) * speed * Time.deltaTime);
     }
+
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision != null)
@@ -36,5 +33,6 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+
 
 }
