@@ -105,22 +105,23 @@ public class Player : MonoBehaviour
             actualAudio.Play();
         }*/
 
-        //change the fire method to use the bullet prefab
-        switch(BulletPref.name)
+        //Change pitch audio in a random value
+
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
         {
-            case "Bullet":
-                if (Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
-                {
+            actualAudio.pitch = Random.Range(0.8f, 1.2f);
+
+            //change the fire method to use the bullet prefab
+            switch (BulletPref.name)
+            {
+                case "Bullet": //Instantiate the bullet in the center
                     Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
                     actualAudio.Play();
-                }
-                break;
-            case "Missile":
-                //Instantiate 3 bullets, one in the center and the other two in diagonal, change the direction of the bullets
-                if (Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
-                {
+                    break;
+                case "Missile": //Instantiate 3 bullets, one in the center and the other two in diagonal, change the direction of the bullets
+
                     //Instantiate the bullet in the center
                     var bullet1 = Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                     bullet1.GetComponent<Missile>().direction = Vector2.up;
@@ -136,17 +137,14 @@ public class Player : MonoBehaviour
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
                     actualAudio.Play();
-                }
-                break;
-            case "Energy Ball":
-                if (Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
-                {
+                    break;
+                case "Energy Ball": //Instantiate the bullet in a wave pattern
                     Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
                     actualAudio.Play();
-                }
-                break;
+                    break;
+            }
         }
     }
     //public GameObject BulletPref; ----> esta es la bala que se va a disparar
