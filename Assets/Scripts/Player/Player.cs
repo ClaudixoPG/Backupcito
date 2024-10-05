@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public AudioSource actualAudio;
 
     public GameObject shield;
+    public int actualWeapon = 0;
 
     private void Start()
     {
@@ -158,14 +159,17 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             BulletPref = bullets[0].gameObject;
+            actualWeapon = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             BulletPref = bullets[1].gameObject;
+            actualWeapon = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             BulletPref = bullets[2].gameObject;
+            actualWeapon = 2;
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

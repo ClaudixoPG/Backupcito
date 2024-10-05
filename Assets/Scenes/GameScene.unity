@@ -2002,6 +2002,11 @@ MonoBehaviour:
   timeText: {fileID: 206219299}
   TotalTime: 0
   score: 0
+  bulletImage: {fileID: 199531543}
+  bulletSprites:
+  - {fileID: -4063556361062629662, guid: 63cef637f233f2f49b46001c55aed38c, type: 3}
+  - {fileID: 741165744319872711, guid: 5791f2698c3b92e4bb87c5dd8fcd1792, type: 3}
+  - {fileID: 175833733706117895, guid: acb19d0639f71c04598c0529badd4d37, type: 3}
 --- !u!1001 &6721681664877401416
 PrefabInstance:
   m_ObjectHideFlags: 0

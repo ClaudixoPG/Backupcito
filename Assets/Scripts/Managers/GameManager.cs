@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -15,15 +18,20 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI weaponText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timeText;
-    public float TotalTime = 0.0f;
 
+    public float TotalTime = 0.0f;
     public int score = 0;
+
+    [Header("UI")]
+    public Image bulletImage;
+    public List<Sprite> bulletSprites;
 
     // Update is called once per frame
     void Update()
     {
         CreateEnemy();
         UpdateCanvas();
+        ChangeBulletImage(player.actualWeapon);
         TotalTime += Time.deltaTime;
     }
 
@@ -31,7 +39,8 @@ public class GameManager : MonoBehaviour
     {
         liveText.text = "Life: " + player.lives;
         shieldsText.text = "Shields: " + player.shieldsAmount;
-        weaponText.text = "Weapon: " + player.BulletPref.name;
+        //weaponText.text = "Weapon: " + player.BulletPref.name;
+        weaponText.text = player.BulletPref.name;
         scoreText.text = "Score: " + score.ToString();
         //truncate the time to no show decimals
         timeText.text = "Time: " + TotalTime.ToString("F0");
@@ -49,5 +58,11 @@ public class GameManager : MonoBehaviour
     public void AddScore(int value)
     {
         score += value;
+    }
+
+    public void ChangeBulletImage(int index)
+    {
+        Debug.Log("ChangeBulletImage: " + index);
+        bulletImage.sprite = bulletSprites[index];
     }
 }
