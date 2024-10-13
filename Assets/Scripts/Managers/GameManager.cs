@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-//using UnityEngine.UIElements;
 using UnityEngine.UI;
-
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float spawnTime = 1.5f;
     public float time = 0.0f;
     public Player player;
+
+    [Header("TEXTOS")]
     public TextMeshProUGUI liveText;
     public TextMeshProUGUI shieldsText;
     public TextMeshProUGUI weaponText;
@@ -22,9 +21,6 @@ public class GameManager : MonoBehaviour
     public float TotalTime = 0.0f;
     public int score = 0;
 
-    [Header("UI")]
-    public Image bulletImage;
-    public List<Sprite> bulletSprites;
 
     // Update is called once per frame
     void Update()
@@ -59,6 +55,11 @@ public class GameManager : MonoBehaviour
     {
         score += value;
     }
+
+
+    [Header("UI")]
+    public Image bulletImage;
+    public List<Sprite> bulletSprites;
 
     public void ChangeBulletImage(int index)
     {

@@ -1887,8 +1887,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2904503626682938908, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904503626682938908, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
       propertyPath: m_Volume
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904503626682938908, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904503626682938908, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
       propertyPath: lives
@@ -1905,7 +1917,7 @@ PrefabInstance:
     - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
       propertyPath: bullets.Array.data[1]
       value: 
-      objectReference: {fileID: 7108867720034507715, guid: 185c54c0f2cf3b7499890d54f8238192, type: 3}
+      objectReference: {fileID: 545329425484509701, guid: 185c54c0f2cf3b7499890d54f8238192, type: 3}
     - target: {fileID: 3400606705183253310, guid: 1120d53c14b4866408b5ec79f89f42bf, type: 3}
       propertyPath: bullets.Array.data[2]
       value: 

@@ -110,39 +110,46 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > canFire)
         {
-            actualAudio.pitch = Random.Range(0.8f, 1.2f);
+            
 
             //change the fire method to use the bullet prefab
             switch (BulletPref.name)
             {
                 case "Bullet": //Instantiate the bullet in the center
-                    Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+                    Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), 
+                        Quaternion.identity);
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
+                    actualAudio.pitch = 1;
                     actualAudio.Play();
                     break;
                 case "Missile": //Instantiate 3 bullets, one in the center and the other two in diagonal, change the direction of the bullets
 
                     //Instantiate the bullet in the center
-                    var bullet1 = Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+                    var bullet1 = Instantiate(BulletPref, transform.position + 
+                        new Vector3(0, 0.8f, 0), Quaternion.identity);
                     bullet1.GetComponent<Missile>().direction = Vector2.up;
 
                     //Instantiate the bullet in the right
-                    var bullet2 = Instantiate(BulletPref, transform.position + new Vector3(0.5f, 0.8f, 0), Quaternion.identity);
+                    var bullet2 = Instantiate(BulletPref, transform.position + 
+                        new Vector3(0.5f, 0.8f, 0), Quaternion.identity);
                     bullet2.GetComponent<Missile>().direction = new Vector2(0.5f, 1);
 
                     //Instantiate the bullet in the left
-                    var bullet3 = Instantiate(BulletPref, transform.position + new Vector3(-0.5f, 0.8f, 0), Quaternion.identity);
+                    var bullet3 = Instantiate(BulletPref, transform.position + 
+                        new Vector3(-0.5f, 0.8f, 0), Quaternion.identity);
                     bullet3.GetComponent<Missile>().direction = new Vector2(-0.5f, 1);
 
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
+                     
                     actualAudio.Play();
                     break;
                 case "Energy Ball": //Instantiate the bullet in a wave pattern
                     Instantiate(BulletPref, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
                     canFire = Time.time + fireRate;
                     //Play the sound of the bullet
+                    actualAudio.pitch = Random.Range(0.5f, 1f);
                     actualAudio.Play();
                     break;
             }
